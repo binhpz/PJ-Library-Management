@@ -23,6 +23,8 @@ namespace GUI
         private long selectedTheLoai = -1;
         private long selectedSach = -1;
         private int selectedItemLoaiSachh = -1;
+        private int selectedItemDocGia = -1;
+        private long selectedDocGia = -1;
         public Menu()
         {
             InitializeComponent();
@@ -32,6 +34,8 @@ namespace GUI
             loadTableMuonSach();
             loadTableTraSach();
             launchLoaiSachOnSachTable();
+            launchDocGiaOnMuonSachTable();
+            launchSachOnMuonSachTable();
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
@@ -146,10 +150,16 @@ namespace GUI
 
         private void XoaTLBtn_Click(object sender, EventArgs e)
         {
-            if (selectedTheLoai >= 0)
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa ??",
+                                    " Xác nhận xóa !!",
+                                    MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
             {
-                theLoaiBus.delete(selectedTheLoai);
-                loadTableTheLoai();
+                if (selectedTheLoai >= 0)
+                {
+                    theLoaiBus.delete(selectedTheLoai);
+                    loadTableTheLoai();
+                }
             }
         }
 
@@ -198,31 +208,22 @@ namespace GUI
             }
         }
 
-        private void clearTheLoai_Click(object sender, EventArgs e)
-        {
-            TenTheLoaiTb.Text = "";
-            MaTheLoaiTb.Text = "";
-            TimTheLoaiTb.Text = "";
-            loadTableTheLoai();
-            TimTheLoaiTb.Enabled = true;
-
-
-        }
-
+      
         private void TimTLBtn_Click(object sender, EventArgs e)
         {
-            var ma = long.Parse(TimTheLoaiTb.Text);
-            var list = theLoaiBus.findListByMaTheLoai(ma);
+            var list = theLoaiBus.findListByTenTheLoai(TenTheLoaiTb.Text);
             var source = new BindingSource(list, null);
             TableTheLoai.DataSource = source;
-            TimTheLoaiTb.Enabled = false;
+            //TimTheLoaiTb.Enabled = false;
         }
 
+        /*
         private void TimTheLoaiTb_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData != Keys.Back)
                 e.SuppressKeyPress = !int.TryParse(Convert.ToString((char)e.KeyData), out int _);
         }
+        */
 
 
         private void loadTableTheLoai()
@@ -330,6 +331,20 @@ namespace GUI
             LoaiSachCb.DisplayMember = "TenLoaiSach";
         }
 
+        private void launchDocGiaOnMuonSachTable()
+        {
+            var docgia = docGiaBus.getList();
+            docgiaCBOnMuonSach.DataSource = docgia;
+            docgiaCBOnMuonSach.DisplayMember = "TenDG";
+        }
+
+        private void launchSachOnMuonSachTable()
+        {
+            var sach = sachsBus.getList();
+            sachLBMuonSach.DataSource = sach;
+            sachLBMuonSach.DisplayMember = "TenSach";
+        }
+
         private void LoaiSachCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedItemLoaiSachh = LoaiSachCb.SelectedIndex;
@@ -366,6 +381,7 @@ namespace GUI
             NhaXuatBanTb.Text = "";
             NamXuatBanTb.Text = "";
             SoLuongTb.Text = "";
+            loadTableSach();
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -390,10 +406,7 @@ namespace GUI
 
         private void siticoneButton2_Click(object sender, EventArgs e)
         {
-            maDocGiaTbMS.Text = "";
-            ngayMuonTbMS.Text = "";
-            ngayHenTraTbMS.Text = "";
-            soLuongMuonTbMS.Text = "";
+          
         }
 
         private void siticoneButton3_Click(object sender, EventArgs e)
@@ -410,7 +423,14 @@ namespace GUI
 
         private void siticoneButton4_Click(object sender, EventArgs e)
         {
-
+            maDocGiaQLDG.Text = "";
+            tenDocGiaQLDG.Text = "";
+            NgaySinhDp.Value = DateTime.Now;
+            NgayHhtDp.Value = DateTime.Now;
+            DiaChiTb.Text = "";
+            SoCmndTb.Text = "";
+            SdtTb.Text = "";
+            loadTableDocGia();
         }
 
         private void muonSachTable_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -454,23 +474,177 @@ namespace GUI
             }
             else
             {
-           /*     var errors = sachsBus.edit(long.Parse(TenSachTb.Text), (TenTacGiaTb.Text), (NhaXuatBanTb.Text), (NamXuatBanTb.Text), (SoLuongTb.Text));
-                if (errors.count > 0) 
+                LoaiSach ls = (LoaiSach)LoaiSachCb.Items[selectedItemLoaiSachh];
+                var errors = sachsBus.edit(long.Parse(MaSachTb.Text), TenSachTb.Text, TenTacGiaTb.Text, 
+                    ls.MaLoaiSach, NhaXuatBanTb.Text, int.Parse(NamXuatBanTb.Text), int.Parse(SoLuongTb.Text));
+                if (errors.Count > 0)
                 {
-                    handleShowErrors.errors;
+                    handleShowErrors(errors);
+                }
+                else
+                {
                     MessageBox.Show("Sửa thành công");
-                } */
-                    loadTableSach();
-                 } 
+                    loadTableTheLoai();
+                }
+                loadTableSach();
+            } 
         }
 
         private void XoaBtn_Click(object sender, EventArgs e)
         {
-            if (selectedSach >= 0)
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa ??",
+                                      " Xác nhận xóa !!",
+                                      MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
             {
-             //   SachBus.delete();
-                loadTableSach();
+                if (selectedSach >= 0)
+                {
+                    sachsBus.delete(selectedSach);
+                    loadTableSach();
+                }
             }
+            else
+            {
+            }
+
+        }
+
+        private void tableSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var dvg = sender as DataGridView;
+            //Get the current row's data, if any
+            var row = dvg.Rows[e.RowIndex];
+            //This works if you data bound the DGV as normal
+            var sach = row.DataBoundItem as Sach;  //Or DataRow if you're using a Dataset
+            if (sach != null)
+            {
+                selectedSach = sach.MaSach;
+                MaSachTb.Text = sach.MaSach.ToString();
+                TenSachTb.Text = sach.TenSach;
+                TenTacGiaTb.Text = sach.TenTacGia;
+                NhaXuatBanTb.Text = sach.NhaXuatBan;
+                NamXuatBanTb.Text = sach.NamXuatBan.ToString();
+                SoLuongTb.Text = sach.SoLuong.ToString();
+                var tenLoaiSach = sach.LoaiSach.TenLoaiSach;
+                LoaiSachCb.SelectedIndex = LoaiSachCb.FindStringExact(tenLoaiSach);
+            }
+        }
+
+        private void XoaDocGiaBtn_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa ??",
+                                    " Xác nhận xóa !!",
+                                    MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                if (selectedDocGia >= 0)
+                {
+                    docGiaBus.delete(selectedDocGia);
+                    loadTableDocGia();
+                }
+            }
+            else
+            {
+            }
+        }
+
+        private void TimKiemBtn_Click(object sender, EventArgs e)
+        {
+            if (TenSachTb.Text == "")
+            {
+                MessageBox.Show("Yêu cầu nhập tên sách!");
+            } else
+            {
+                var list = sachsBus.findListByTenSach(TenSachTb.Text);
+                tableSach.DataSource = null;
+                var bindingList = list;
+                var source = new BindingSource(bindingList, null);
+                tableSach.DataSource = source;
+            }
+        }
+
+        private void clearTheLoai_Click(object sender, EventArgs e)
+        {
+            TenTheLoaiTb.Text = "";
+            MaTheLoaiTb.Text = "";
+            loadTableTheLoai();
+        }
+
+        private void ThemDocGiaBtn_Click(object sender, EventArgs e)
+        {
+            // check field emppty;
+            // 
+            var errors = docGiaBus.add(tenDocGiaQLDG.Text, NgaySinhDp.Value, DiaChiTb.Text, SoCmndTb.Text, SdtTb.Text, NgayHhtDp.Value);
+
+            if (errors.Count > 0)
+            {
+                handleShowErrors(errors);
+            }
+            else
+            {
+                MessageBox.Show("Thêm thành công");
+                loadTableDocGia();
+            }
+        }
+
+        private void TableDocGia_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var dvg = sender as DataGridView;
+            //Get the current row's data, if any
+            var row = dvg.Rows[e.RowIndex];
+            //This works if you data bound the DGV as normal
+            var docgia = row.DataBoundItem as DocGia;  //Or DataRow if you're using a Dataset
+            if (docgia != null)
+            {
+                selectedDocGia = docgia.MaDG;
+                tenDocGiaQLDG.Text = docgia.TenDG;
+                maDocGiaQLDG.Text = docgia.MaDG.ToString();
+                NgayHhtDp.Value = (DateTime)docgia.NgayHetHanThe;
+                NgaySinhDp.Value = (DateTime)docgia.NgaySinh;
+                DiaChiTb.Text = docgia.DiaChi;
+                SoCmndTb.Text = docgia.SoCMT;
+                SdtTb.Text = docgia.SDT;
+
+            }
+        }
+
+        private void SuaDocGiaBtn_Click(object sender, EventArgs e)
+        {
+            var errors = docGiaBus.edit(selectedDocGia, tenDocGiaQLDG.Text, NgaySinhDp.Value, DiaChiTb.Text, SoCmndTb.Text, SdtTb.Text, NgayHhtDp.Value);
+
+            if (errors.Count > 0)
+            {
+                handleShowErrors(errors);
+            }
+            else
+            {
+                MessageBox.Show("Sửa thành công");
+                loadTableDocGia();
+            }
+        }
+
+        private void TimDocGiaBtn_Click(object sender, EventArgs e)
+        {
+            var list = docGiaBus.search(tenDocGiaQLDG.Text, SdtTb.Text, SoCmndTb.Text);
+            TableDocGia.DataSource = null;
+            var bindingList = list;
+            var source = new BindingSource(bindingList, null);
+            TableDocGia.DataSource = source;
+        }
+
+        private void tableLayoutPanel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void docgiaCBOnMuonSach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedItemDocGia = docgiaCBOnMuonSach.SelectedIndex;
+        }
+
+        private void loaiSachBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

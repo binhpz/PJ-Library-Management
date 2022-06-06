@@ -1,0 +1,451 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MADE.Collections</name>
+    </assembly>
+    <members>
+        <member name="T:MADE.Collections.CollectionExtensions">
+            <summary>
+            Defines a collection of extensions for enumerables, lists, and collections.
+            </summary>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.AddIf``1(System.Collections.Generic.IList{``0},``0,System.Func{System.Boolean})">
+            <summary>
+            Adds the specified item to the collection based on the specified condition being true.
+            </summary>
+            <param name="collection">The collection to add the item to.</param>
+            <param name="item">The item to add.</param>
+            <param name="condition">The condition required to add the item.</param>
+            <typeparam name="T">The type of item within the collection.</typeparam>
+            <exception cref="T:System.ArgumentNullException">Thrown if the <paramref name="collection"/> or <paramref name="condition"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.Exception">Potentially thrown by the delegate callback.</exception>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.RemoveIf``1(System.Collections.Generic.IList{``0},``0,System.Func{System.Boolean})">
+            <summary>
+            Removes the specified item from the collection based on the specified condition being true.
+            </summary>
+            <param name="collection">The collection to remove the item from.</param>
+            <param name="item">The item to remove.</param>
+            <param name="condition">The condition required to remove the item.</param>
+            <typeparam name="T">The type of item within the collection.</typeparam>
+            <exception cref="T:System.ArgumentNullException">Thrown if the <paramref name="collection"/> or <paramref name="condition"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.Exception">Potentially thrown by the delegate callback.</exception>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.Update``1(System.Collections.Generic.IList{``0},``0,System.Func{``0,``0,System.Boolean})">
+            <summary>
+            Updates an item within the collection.
+            </summary>
+            <typeparam name="T">
+            The type of item within the collection.
+            </typeparam>
+            <param name="collection">
+            The collection to update an item in.
+            </param>
+            <param name="item">
+            The item to update.
+            </param>
+            <param name="predicate">
+            The function to find the item within the <paramref name="collection"/>.
+            </param>
+            <returns>
+            True if the item has been updated; otherwise, false.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="item"/> or <paramref name="collection"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.Exception">The <paramref name="predicate"/> delegate callback throws an exception.</exception>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.MakeEqualTo``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Makes the given destination collection items equal to the items in the given source collection by adding or removing items from the destination.
+            </summary>
+            <param name="destination">
+            The destination collection to add or remove items to.
+            </param>
+            <param name="source">
+            The source collection to provide the items.
+            </param>
+            <typeparam name="T">
+            The type of item within the collection.
+            </typeparam>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Adds a collection of items to another.
+            </summary>
+            <param name="collection">
+            The collection to add to.
+            </param>
+            <param name="itemsToAdd">
+            The items to add.
+            </param>
+            <typeparam name="T">
+            The type of items in the collection.
+            </typeparam>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="collection"/> or <paramref name="itemsToAdd"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.AddRangeIf``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0},System.Func{System.Boolean})">
+            <summary>
+            Adds the specified collection of items to the collection based on the specified condition being true.
+            </summary>
+            <param name="collection">The collection to add the items to.</param>
+            <param name="itemsToAdd">The items to add.</param>
+            <param name="condition">The condition required to add the items.</param>
+            <typeparam name="T">The type of item within the collection.</typeparam>
+            <exception cref="T:System.ArgumentNullException">Thrown if the <paramref name="collection"/>, <paramref name="itemsToAdd"/> or <paramref name="condition"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.Exception">Potentially thrown by the delegate callback.</exception>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.RemoveRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Removes a collection of items from another.
+            </summary>
+            <param name="collection">
+            The collection to remove from.
+            </param>
+            <param name="itemsToRemove">
+            The items to remove from the collection.
+            </param>
+            <typeparam name="T">
+            The type of items in the collection.
+            </typeparam>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="collection"/> or <paramref name="itemsToRemove"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.RemoveRangeIf``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0},System.Func{System.Boolean})">
+            <summary>
+            Removes the specified collection of items from the collection based on the specified condition being true.
+            </summary>
+            <param name="collection">The collection to remove the items from.</param>
+            <param name="itemsToRemove">The items to remove.</param>
+            <param name="condition">The condition required to remove the items.</param>
+            <typeparam name="T">The type of item within the collection.</typeparam>
+            <exception cref="T:System.ArgumentNullException">Thrown if the <paramref name="collection"/>, <paramref name="itemsToRemove"/> or <paramref name="condition"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.Exception">Potentially thrown by the delegate callback.</exception>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.AreEquivalent``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Determines whether two collections are equivalent, containing all the same items with no regard to order.
+            </summary>
+            <typeparam name="T">The type of item.</typeparam>
+            <param name="expected">The expected collection.</param>
+            <param name="actual">The actual collection.</param>
+            <returns>True if the collections are equivalent; otherwise, false.</returns>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.TakeFrom``1(System.Collections.Generic.List{``0},System.Int32,System.Int32)">
+            <summary>
+            Takes a number of elements from the specified collection from the specified starting index.
+            </summary>
+            <param name="list">
+            The <see cref="T:System.Collections.Generic.List`1"/> to take items from.
+            </param>
+            <param name="startingIndex">
+            The index to start at in the <see cref="T:System.Collections.Generic.List`1"/>.
+            </param>
+            <param name="takeCount">
+            The number of items to take from the starting index of the <see cref="T:System.Collections.Generic.List`1"/>.
+            </param>
+            <typeparam name="T">
+            The type of elements in the collection.
+            </typeparam>
+            <returns>
+            A collection of <typeparamref name="T"/> items.
+            </returns>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Performs the specified action on each item in the collection.
+            </summary>
+            <typeparam name="T">
+            The type of item in the collection.
+            </typeparam>
+            <param name="collection">
+            The collection to action on.
+            </param>
+            <param name="action">
+            The action to perform.
+            </param>
+            <exception cref="T:System.Exception">Potentially thrown by the delegate callback.</exception>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.Chunk``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Chunks a collection of items into a collection of collections grouped into the specified chunk size.
+            </summary>
+            <typeparam name="T">The type of item.</typeparam>
+            <param name="source">The source collection to chunk.</param>
+            <param name="chunkSize">The chunk size.</param>
+            <returns>A collection of collections containing the chunked items.</returns>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.InsertAtPotentialIndex``1(System.Collections.Generic.IList{``0},``0,System.Func{``0,``0,System.Boolean})">
+            <summary>Inserts an item to the specified <paramref name="source"/> at the potential index determined by the <paramref name="predicate"/>.</summary>
+            <param name="source">The source where the <paramref name="value" /> should be inserted.</param>
+            <param name="value">The object to insert into the <paramref name="source"/>.</param>
+            <param name="predicate">The action to run to determine the position of the item based on the provided <paramref name="value"/> and an item in the collection.</param>
+            <typeparam name="T">The type of items in the collection.</typeparam>
+            <returns>The inserted index of the item.</returns>
+            <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.IList`1" /> is read-only.</exception>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.PotentialIndexOf``1(System.Collections.Generic.IList{``0},``0,System.Func{``0,``0,System.Boolean})">
+            <summary>Gets the potential index of an item that does not currently exist within a collection based on the specified criteria.</summary>
+            <param name="source">The collection to get the index from.</param>
+            <param name="value">The object to determine an index for in the <paramref name="source"/>.</param>
+            <param name="predicate">The action to run to determine the position of the item based on the provided <paramref name="value"/> and an item in the collection.</param>
+            <typeparam name="T">The type of items in the collection.</typeparam>
+            <returns>The potential index of the item.</returns>
+            <exception cref="T:System.Exception">Potentially thrown by the delegate callback.</exception>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Shuffles the elements of a sequence randomly.
+            </summary>
+            <param name="source">The collection to shuffle.</param>
+            <typeparam name="T">The type of item in the collection.</typeparam>
+            <returns>The shuffled collection of items.</returns>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.Sort``2(System.Collections.ObjectModel.ObservableCollection{``0},System.Func{``0,``1})">
+            <summary>Sorts the elements in the entire <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> using the specified comparer.</summary>
+            <param name="source">The source collection to sort.</param>
+            <param name="comparer">The implementation to use when comparing elements.</param>
+            <typeparam name="T">The type of item in the collection.</typeparam>
+            <typeparam name="TKey">The key value of the item to sort on.</typeparam>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.SortDescending``2(System.Collections.ObjectModel.ObservableCollection{``0},System.Func{``0,``1})">
+            <summary>Sorts the elements in the entire <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> using the specified comparer in descending order.</summary>
+            <param name="source">The source collection to sort.</param>
+            <param name="comparer">The implementation to use when comparing elements.</param>
+            <typeparam name="T">The type of item in the collection.</typeparam>
+            <typeparam name="TKey">The key value of the item to sort on.</typeparam>
+        </member>
+        <member name="M:MADE.Collections.CollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Indicates whether the specified collection is <see langword="null" /> or empty (containing no items).</summary>
+            <param name="source">The collection to test.</param>
+            <typeparam name="T">The type of item in the collection.</typeparam>
+            <returns>
+            <see langword="true" /> if the <paramref name="source" /> parameter is <see langword="null" /> or empty (containing no items); otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="T:MADE.Collections.Compare.GenericEqualityComparer`1">
+            <summary>
+            Defines an equality comparer for comparing two objects using a simple comparison function.
+            </summary>
+            <typeparam name="T">
+            The type of object to comparison.
+            </typeparam>
+        </member>
+        <member name="M:MADE.Collections.Compare.GenericEqualityComparer`1.#ctor(System.Func{`0,System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Collections.Compare.GenericEqualityComparer`1"/> class.
+            </summary>
+            <param name="comparison">
+            The comparison expression.
+            </param>
+        </member>
+        <member name="M:MADE.Collections.Compare.GenericEqualityComparer`1.Equals(`0,`0)">
+            <summary>
+            Compares two objects of the same type for equality.
+            </summary>
+            <param name="x">
+            The first item.
+            </param>
+            <param name="y">
+            The second item.
+            </param>
+            <returns>
+            True if the two items are equal based on the comparison expression; otherwise, false.
+            </returns>
+            <exception cref="T:System.Exception">The <see cref="P:MADE.Collections.Compare.GenericEqualityComparer`1.Comparison"/> callback throws an exception.</exception>
+        </member>
+        <member name="M:MADE.Collections.Compare.GenericEqualityComparer`1.GetHashCode(`0)">
+            <summary>
+            Gets the hash code for the expected comparison object.
+            </summary>
+            <param name="obj">
+            The object to get the comparison object hash code for.
+            </param>
+            <returns>
+            A hash code for the comparison object.
+            </returns>
+            <exception cref="T:System.Exception">The <see cref="P:MADE.Collections.Compare.GenericEqualityComparer`1.Comparison"/> callback throws an exception.</exception>
+        </member>
+        <member name="T:MADE.Collections.DictionaryExtensions">
+            <summary>
+            Defines a collection of extensions for dictionaries.
+            </summary>
+        </member>
+        <member name="M:MADE.Collections.DictionaryExtensions.AddOrUpdate``2(System.Collections.Generic.Dictionary{``0,``1},``0,``1)">
+            <summary>
+            Adds or updates a value within a dictionary.
+            </summary>
+            <param name="dictionary">
+            The dictionary to update.
+            </param>
+            <param name="key">
+            The key of the value to add or update.
+            </param>
+            <param name="value">
+            The value to add or update.
+            </param>
+            <typeparam name="TKey">
+            The type of key item within the dictionary.
+            </typeparam>
+            <typeparam name="TValue">
+            The type of value item within the dictionary.
+            </typeparam>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="dictionary"/> or <paramref name="key"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:MADE.Collections.DictionaryExtensions.GetValueOrDefault``2(System.Collections.Generic.Dictionary{``0,``1},``0,``1)">
+            <summary>
+            Gets a value from a dictionary by the specified key, or returns a default value.
+            </summary>
+            <typeparam name="TKey">The type of key item within the dictionary.</typeparam>
+            <typeparam name="TValue">The type of value item within the dictionary.</typeparam>
+            <param name="dictionary">The dictionary to get a value from.</param>
+            <param name="key">The key to get a value for.</param>
+            <param name="defaultValue">The default value to return if not exists. Default, null.</param>
+            <returns>The value if it exists for the key; otherwise, null.</returns>
+        </member>
+        <member name="T:MADE.Collections.ObjectModel.ObservableItemCollectionPropertyChangedEventArgs">
+            <summary>
+            Defines an event argument for when an <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> object property has changed.
+            </summary>
+        </member>
+        <member name="M:MADE.Collections.ObjectModel.ObservableItemCollectionPropertyChangedEventArgs.#ctor(System.Object,System.Int32,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Collections.ObjectModel.ObservableItemCollectionPropertyChangedEventArgs"/> class.
+            </summary>
+            <param name="sender">
+            The <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> object sender.
+            </param>
+            <param name="index">
+            The index of the <paramref name="sender"/> within the <see cref="T:MADE.Collections.ObjectModel.ObservableItemCollection`1"/>.
+            </param>
+            <param name="eventArgs">
+            The associated property changed event argument.
+            </param>
+        </member>
+        <member name="P:MADE.Collections.ObjectModel.ObservableItemCollectionPropertyChangedEventArgs.Sender">
+            <summary>
+            Gets the <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> object sender.
+            </summary>
+        </member>
+        <member name="P:MADE.Collections.ObjectModel.ObservableItemCollectionPropertyChangedEventArgs.Index">
+            <summary>
+            Gets index of the <see cref="P:MADE.Collections.ObjectModel.ObservableItemCollectionPropertyChangedEventArgs.Sender"/> within the <see cref="T:MADE.Collections.ObjectModel.ObservableItemCollection`1"/>.
+            </summary>
+        </member>
+        <member name="P:MADE.Collections.ObjectModel.ObservableItemCollectionPropertyChangedEventArgs.EventArgs">
+            <summary>
+            Gets associated property changed event argument.
+            </summary>
+        </member>
+        <member name="T:MADE.Collections.ObjectModel.ObservableItemCollectionPropertyChangedEventHandler">
+            <summary>
+            Defines event handler for when an <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> object has invoked the
+            <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/> event within a <see cref="T:MADE.Collections.ObjectModel.ObservableItemCollection`1"/>.
+            </summary>
+            <param name="sender">
+            The <see cref="T:MADE.Collections.ObjectModel.ObservableItemCollection`1"/> sender.
+            </param>
+            <param name="args">
+            The associated property changed event argument for the item.
+            </param>
+        </member>
+        <member name="T:MADE.Collections.ObjectModel.ObservableItemCollection`1">
+            <summary>
+            Defines an <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> that manages the property changed events of the contained <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> items.
+            </summary>
+            <typeparam name="T">
+            The type of <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> items.
+            </typeparam>
+        </member>
+        <member name="M:MADE.Collections.ObjectModel.ObservableItemCollection`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Collections.ObjectModel.ObservableItemCollection`1"/> class that is empty and has a default initial capacity.
+            </summary>
+            <exception cref="T:System.Exception">Potentially thrown by the <see cref="E:MADE.Collections.ObjectModel.ObservableItemCollection`1.CollectionChanged"/> callback.</exception>
+        </member>
+        <member name="M:MADE.Collections.ObjectModel.ObservableItemCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Collections.ObjectModel.ObservableItemCollection`1"/> class that contains elements copied from the specified collection
+            and has sufficient capacity to accommodate the number of elements copied.
+            </summary>
+            <param name="collection">
+            The collection whose elements are copied to the new list.
+            </param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="collection">collection</paramref> parameter cannot be null.</exception>
+            <exception cref="T:System.Exception">Potentially thrown by the <see cref="E:MADE.Collections.ObjectModel.ObservableItemCollection`1.CollectionChanged"/> callback.</exception>
+        </member>
+        <member name="M:MADE.Collections.ObjectModel.ObservableItemCollection`1.#ctor(System.Collections.Generic.List{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Collections.ObjectModel.ObservableItemCollection`1"/> class that contains elements copied from the specified list.
+            </summary>
+            <param name="list">
+            The list whose elements are copied to the new list.
+            </param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="list">list</paramref> parameter cannot be null.</exception>
+            <exception cref="T:System.Exception">Potentially thrown by the <see cref="E:MADE.Collections.ObjectModel.ObservableItemCollection`1.CollectionChanged"/> callback.</exception>
+        </member>
+        <member name="E:MADE.Collections.ObjectModel.ObservableItemCollection`1.CollectionChanged">
+            <summary>
+            Occurs when an item is added, removed, changed, moved, or the entire list is refreshed.
+            </summary>
+        </member>
+        <member name="E:MADE.Collections.ObjectModel.ObservableItemCollection`1.ItemPropertyChanged">
+            <summary>
+            Occurs when an item's <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/> event is invoked.
+            </summary>
+        </member>
+        <member name="M:MADE.Collections.ObjectModel.ObservableItemCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Adds a range of objects to the end of the collection.
+            </summary>
+            <param name="items">
+            The objects to add to the end of the collection.
+            </param>
+            <exception cref="T:System.Exception">Potentially thrown by the <see cref="E:MADE.Collections.ObjectModel.ObservableItemCollection`1.CollectionChanged"/> callback.</exception>
+        </member>
+        <member name="M:MADE.Collections.ObjectModel.ObservableItemCollection`1.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Removes a range of objects from the collection.
+            </summary>
+            <param name="items">
+            The objects to remove from the collection.
+            </param>
+            <exception cref="T:System.Exception">Potentially thrown by the <see cref="E:MADE.Collections.ObjectModel.ObservableItemCollection`1.CollectionChanged"/> callback.</exception>
+        </member>
+        <member name="M:MADE.Collections.ObjectModel.ObservableItemCollection`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:MADE.Collections.ObjectModel.ObservableItemCollection`1.CheckDisposed">
+            <summary>
+            Checks whether the collection is disposed.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">
+            Thrown if the object is disposed.
+            </exception>
+        </member>
+        <member name="M:MADE.Collections.ObjectModel.ObservableItemCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:MADE.Collections.ObjectModel.ObservableItemCollection`1.CollectionChanged"/> event with the provided arguments.
+            </summary>
+            <param name="e">The arguments of the event being raised.</param>
+        </member>
+        <member name="M:MADE.Collections.ObjectModel.ObservableItemCollection`1.ClearItems">
+            <summary>
+            Removes all items from the collection.
+            </summary>
+        </member>
+        <member name="T:MADE.Collections.QueryableExtensions">
+            <summary>
+            Defines a collection of extensions for queryable objects.
+            </summary>
+        </member>
+        <member name="M:MADE.Collections.QueryableExtensions.Chunk``1(System.Linq.IQueryable{``0},System.Int32)">
+            <summary>
+            Chunks a query of items into the specified chunk size.
+            </summary>
+            <typeparam name="T">The type of item.</typeparam>
+            <param name="source">The source query to chunk.</param>
+            <param name="chunkSize">The chunk size.</param>
+            <returns>A collection of queries containing the chunked items.</returns>
+        </member>
+    </members>
+</doc>

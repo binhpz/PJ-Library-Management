@@ -9,6 +9,7 @@ namespace DAL
 {
     public class AppDBContext : DbContext
     {
+
         public AppDBContext() : base("name=LibraryConnectionString")
         {
         }

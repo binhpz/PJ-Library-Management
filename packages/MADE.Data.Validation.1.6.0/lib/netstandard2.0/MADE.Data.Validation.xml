@@ -1,0 +1,1227 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MADE.Data.Validation</name>
+    </assembly>
+    <members>
+        <member name="T:MADE.Data.Validation.Exceptions.InvalidRangeException">
+            <summary>
+            Defines an exception for an invalid range.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Exceptions.InvalidRangeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Exceptions.InvalidRangeException"/> class.
+            </summary>
+            <param name="message">The exception message.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.Extensions.ComparableExtensions">
+            <summary>
+            Defines a collection of extensions for <see cref="T:System.IComparable"/> objects.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.ComparableExtensions.IsGreaterThan``1(``0,``0)">
+            <summary>
+            Determines whether the value is greater than the <paramref name="other"/> value.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.IComparable"/> type.</typeparam>
+            <param name="value">The value to compare.</param>
+            <param name="other">The value to compare against.</param>
+            <returns>True if the <paramref name="value"/> is greater than the <paramref name="other"/> value.</returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.ComparableExtensions.IsGreaterThanOrEqualTo``1(``0,``0)">
+            <summary>
+            Determines whether the value is greater than or equal to the <paramref name="other"/> value.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.IComparable"/> type.</typeparam>
+            <param name="value">The value to compare.</param>
+            <param name="other">The value to compare against.</param>
+            <returns>True if the <paramref name="value"/> is greater than or equal to the <paramref name="other"/> value.</returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.ComparableExtensions.IsLessThan``1(``0,``0)">
+            <summary>
+            Determines whether the value is less than the <paramref name="other"/> value.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.IComparable"/> type.</typeparam>
+            <param name="value">The value to compare.</param>
+            <param name="other">The value to compare against.</param>
+            <returns>True if the <paramref name="value"/> is less than the <paramref name="other"/> value.</returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.ComparableExtensions.IsLessThanOrEqualTo``1(``0,``0)">
+            <summary>
+            Determines whether the value is less than or equal to the <paramref name="other"/> value.
+            </summary>
+            <typeparam name="T">The <see cref="T:System.IComparable"/> type.</typeparam>
+            <param name="value">The value to compare.</param>
+            <param name="other">The value to compare against.</param>
+            <returns>True if the <paramref name="value"/> is less than or equal to the <paramref name="other"/> value.</returns>
+        </member>
+        <member name="T:MADE.Data.Validation.Extensions.DateTimeExtensions">
+            <summary>
+            Defines a collection of data validation extensions for <see cref="T:System.DateTime"/> objects.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.DateTimeExtensions.IsInRange(System.DateTime,System.DateTime,System.DateTime)">
+            <summary>
+            Determines whether a <see cref="T:System.DateTime"/> is within a valid range.
+            </summary>
+            <param name="date">The <see cref="T:System.DateTime"/> to check.</param>
+            <param name="from">The lower bound of the range.</param>
+            <param name="to">The upper bound of the range.</param>
+            <returns>True if the date is within the valid range.</returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.DateTimeExtensions.IsWeekday(System.DateTime)">
+            <summary>
+            Determines whether a <see cref="T:System.DateTime"/> is a day of the week other than Sunday or Saturday.
+            </summary>
+            <param name="date">The <see cref="T:System.DateTime"/> to check.</param>
+            <returns>True if the day of week is between Monday and Friday; otherwise, false.</returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.DateTimeExtensions.IsWeekend(System.DateTime)">
+            <summary>
+            Determines whether a <see cref="T:System.DateTime"/> is a day of the week other than Monday through Friday.
+            </summary>
+            <param name="date">The <see cref="T:System.DateTime"/> to check.</param>
+            <returns>True if the day of week is Saturday or Sunday; otherwise, false.</returns>
+        </member>
+        <member name="T:MADE.Data.Validation.Extensions.MathExtensions">
+            <summary>
+            Defines a collection of extensions for common mathematics expressions.
+            </summary>
+        </member>
+        <member name="F:MADE.Data.Validation.Extensions.MathExtensions.Epsilon">
+            <summary>
+            Gets a value for Epsilon.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsZero(System.Double)">
+            <summary>
+            Checks whether a double value is zero.
+            </summary>
+            <param name="value">
+            The value to check.
+            </param>
+            <returns>
+            True if zero; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsZero(System.Single)">
+            <summary>
+            Checks whether a float value is zero.
+            </summary>
+            <param name="value">
+            The value to check.
+            </param>
+            <returns>
+            True if zero; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsCloseTo(System.Int32,System.Int32)">
+            <summary>
+            Checks whether two values are close in value.
+            </summary>
+            <param name="value">
+            The first value.
+            </param>
+            <param name="compare">
+            The second value.
+            </param>
+            <returns>
+            True if the values are close; otherwise, false.
+            </returns>
+            <exception cref="T:System.OverflowException">Thrown if the value equals <see cref="F:System.Int32.MinValue"></see>.</exception>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsCloseTo(System.Double,System.Double)">
+            <summary>
+            Checks whether two values are close in value which have a precision point.
+            </summary>
+            <param name="value">
+            The first value.
+            </param>
+            <param name="compare">
+            The second value.
+            </param>
+            <returns>
+            True if the values are close; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsCloseTo(System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Checks whether two values are close in value which have a precision point.
+            </summary>
+            <param name="value">
+            The first value.
+            </param>
+            <param name="compare">
+            The second value.
+            </param>
+            <returns>
+            True if the values are close; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsCloseTo(System.Single,System.Single)">
+            <summary>
+            Checks whether two values are close in value which have a precision point.
+            </summary>
+            <param name="value">
+            The first value.
+            </param>
+            <param name="compare">
+            The second value.
+            </param>
+            <returns>
+            True if the values are close; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsCloseTo(System.Nullable{System.Single},System.Nullable{System.Single})">
+            <summary>
+            Checks whether two values are close in value which have a precision point.
+            </summary>
+            <param name="value">
+            The first value.
+            </param>
+            <param name="compare">
+            The second value.
+            </param>
+            <returns>
+            True if the values are close; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsGreaterThan(System.Double,System.Double)">
+            <summary>
+            Checks whether a value is significantly greater than another.
+            </summary>
+            <param name="value">
+            The first value.
+            </param>
+            <param name="compare">
+            The second value.
+            </param>
+            <returns>
+            True if the first value is greater than the second; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsLessThan(System.Double,System.Double)">
+            <summary>
+            Checks whether a value is significantly less than another.
+            </summary>
+            <param name="value">
+            The first value.
+            </param>
+            <param name="compare">
+            The second value.
+            </param>
+            <returns>
+            True if the first value is less than the second; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsInRange(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Checks whether a value is within a range.
+            </summary>
+            <param name="value">The value to check is in range.</param>
+            <param name="lower">The lower range band.</param>
+            <param name="upper">The upper range band.</param>
+            <returns>True if the value is in the range; otherwise, false.</returns>
+            <exception cref="T:MADE.Data.Validation.Exceptions.InvalidRangeException">Thrown if the range is invalid.</exception>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsInRange(System.Single,System.Single,System.Single)">
+            <summary>
+            Checks whether a value is within a range.
+            </summary>
+            <param name="value">The value to check is in range.</param>
+            <param name="lower">The lower range band.</param>
+            <param name="upper">The upper range band.</param>
+            <returns>True if the value is in the range; otherwise, false.</returns>
+            <exception cref="T:MADE.Data.Validation.Exceptions.InvalidRangeException">Thrown if the range is invalid.</exception>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.MathExtensions.IsInRange(System.Double,System.Double,System.Double)">
+            <summary>
+            Checks whether a value is within a range.
+            </summary>
+            <param name="value">The value to check is in range.</param>
+            <param name="lower">The lower range band.</param>
+            <param name="upper">The upper range band.</param>
+            <returns>True if the value is in the range; otherwise, false.</returns>
+            <exception cref="T:MADE.Data.Validation.Exceptions.InvalidRangeException">Thrown if the range is invalid.</exception>
+        </member>
+        <member name="T:MADE.Data.Validation.Extensions.StringExtensions">
+            <summary>
+            Defines a collection of extensions for string values.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.StringExtensions.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            Indicates whether a specified string is null, empty, or consists only of white-space characters.
+            </summary>
+            <param name="value">The string to test.</param>
+            <returns>
+            True if the <paramref name="value" /> parameter is null or empty, or if <paramref name="value" /> consists exclusively of white-space characters.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.StringExtensions.Contains(System.String,System.String,System.Globalization.CompareOptions)">
+            <summary>
+            Checks whether a phrase contains a specified value using a comparison option.
+            </summary>
+            <param name="phrase">
+            The phrase to check.
+            </param>
+            <param name="value">
+            The value to find.
+            </param>
+            <param name="compareOption">
+            The compare option.
+            </param>
+            <returns>
+            True if the phrase contains the value; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.StringExtensions.IsLike(System.String,System.String)">
+            <summary>
+            Compares a string value against a wildcard pattern, similar to the Visual Basic like operator.
+            </summary>
+            <remarks>
+            An example of this in use comparing strings with * wildcard pattern.
+            <code>
+              // result is true
+              bool result = "MyValue".IsLike("My*");
+              // result is false
+              result = "MyValue".IsLike("Hello");
+            </code>
+            </remarks>
+            <param name="value">The value to compare is like.</param>
+            <param name="likePattern">The wildcard like pattern to match on.</param>
+            <returns>True if the value is like the pattern; otherwise, false.</returns>
+            <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Throw if a Regex time-out occurred.</exception>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.StringExtensions.IsInt(System.String)">
+            <summary>
+            Checks whether a string value is an integer.
+            </summary>
+            <param name="value">
+            The value to check.
+            </param>
+            <returns>
+            True if safely parses to an integer; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.StringExtensions.IsDouble(System.String)">
+            <summary>
+            Checks whether a string value is a double.
+            </summary>
+            <param name="value">
+            The value to check.
+            </param>
+            <returns>
+            True if safely parses to a double; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.StringExtensions.IsBoolean(System.String)">
+            <summary>
+            Checks whether a string value is a boolean.
+            </summary>
+            <param name="value">
+            The value to check.
+            </param>
+            <returns>
+            True if safely parses to a boolean; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:MADE.Data.Validation.Extensions.StringExtensions.IsFloat(System.String)">
+            <summary>
+            Checks whether a string value is a float.
+            </summary>
+            <param name="value">
+            The value to check.
+            </param>
+            <returns>
+            True if safely parses to a float; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:MADE.Data.Validation.InputValidatedEventArgs">
+            <summary>
+            Defines an event argument for an input validated request.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.InputValidatedEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.InputValidatedEventArgs"/> class.
+            </summary>
+            <param name="isInvalid">
+            A value indicating whether the input is invalid.
+            </param>
+        </member>
+        <member name="M:MADE.Data.Validation.InputValidatedEventArgs.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.InputValidatedEventArgs"/> class.
+            </summary>
+            <param name="isInvalid">
+            A value indicating whether the input is invalid.
+            </param>
+            <param name="isDirty">
+            A value indicating whether the input is dirty.
+            </param>
+        </member>
+        <member name="P:MADE.Data.Validation.InputValidatedEventArgs.IsDirty">
+            <summary>
+            Gets a value indicating whether the input is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.InputValidatedEventArgs.IsInvalid">
+            <summary>
+            Gets a value indicating whether the input is invalid.
+            </summary>
+        </member>
+        <member name="T:MADE.Data.Validation.InputValidatedEventHandler">
+            <summary>
+            Defines a delegate for an event handler for observing when an input is validated.
+            </summary>
+            <param name="sender">
+            The sender.
+            </param>
+            <param name="args">
+            The input validated event argument.
+            </param>
+        </member>
+        <member name="T:MADE.Data.Validation.IValidator">
+            <summary>
+            Defines an interface for a data validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.IValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.IValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.IValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.IValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.IValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.IValidatorCollection">
+            <summary>
+            Defines an interface for a collection of validators.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.IValidatorCollection.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.IValidatorCollection.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.IValidatorCollection.FeedbackMessages">
+            <summary>
+            Gets the validator feedback messages for ones which are invalid.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.IValidatorCollection.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/> against the validators provided.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.Strings.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.AlphaNumericValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value must only contain letters or numbers..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.AlphaValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value must only contain letters..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.Base64Validator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value must be a valid base64 string..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.BetweenValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value must be between {0} and {1}..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.EmailValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value must be a valid email address, e.g. test@example.com..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.GuidValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value must be a valid GUID..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.IpAddressValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value must be a valid IP address, e.g. 192.168.0.1..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.MacAddressValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value must be a valid MAC address, e.g. 00:11:22:33:44:55..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.MaxLengthValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The length must be less than {0}..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.MaxValueValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value must be less than {0}..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.MinLengthValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The length must be greater than {0}..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.MinValueValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value must be greater than {0}..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.PredicateValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value is not valid..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.RegexValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value does not match the valid mask..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.RequiredValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to A value is required..
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Strings.Resources.UrlValidator_FeedbackMessage">
+            <summary>
+              Looks up a localized string similar to The value must be a valid URL, e.g. https://example.com..
+            </summary>
+        </member>
+        <member name="T:MADE.Data.Validation.ValidatorCollection">
+            <summary>
+            Defines a list of <see cref="T:MADE.Data.Validation.IValidator"/> objects that can be accessed by index.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.ValidatorCollection.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:MADE.Data.Validation.ValidatorCollection"/> class that is empty and has the default initial capacity.</summary>
+        </member>
+        <member name="M:MADE.Data.Validation.ValidatorCollection.#ctor(System.Collections.Generic.IEnumerable{MADE.Data.Validation.IValidator})">
+            <summary>Initializes a new instance of the <see cref="T:MADE.Data.Validation.ValidatorCollection"/> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.</summary>
+            <param name="collection">The collection whose elements are copied to the new list.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="collection">collection</paramref> is null.</exception>
+        </member>
+        <member name="M:MADE.Data.Validation.ValidatorCollection.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.ValidatorCollection"/> class that is empty and has the specified initial capacity.</summary>
+            <param name="capacity">The number of elements that the new list can initially store.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="capacity">capacity</paramref> is less than 0.</exception>
+        </member>
+        <member name="E:MADE.Data.Validation.ValidatorCollection.Validated">
+            <summary>
+            Occurs when the input value is validated against the collection of validators.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.ValidatorCollection.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.ValidatorCollection.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.ValidatorCollection.FeedbackMessages">
+            <summary>
+            Gets the validator feedback messages for ones which are invalid.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.ValidatorCollection.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/> against the validators provided.
+            </summary>
+            <param name="value">The value to be validated.</param>
+            <exception cref="T:System.Exception">Potentially thrown by the <see cref="E:MADE.Data.Validation.ValidatorCollection.Validated"/> delegate callback.</exception>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.AlphaNumericValidator">
+            <summary>
+            Defines a data validator for ensuring a value contains alphanumeric characters.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.AlphaNumericValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.AlphaNumericValidator"/> class with the expected RegEx pattern.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.AlphaNumericValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.AlphaValidator">
+            <summary>
+            Defines a data validator for ensuring a value contains alpha characters.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.AlphaValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.AlphaValidator"/> class with the expected RegEx pattern.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.AlphaValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.Base64Validator">
+            <summary>
+            Defines a data validator for ensuring a value is a valid base64 value.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.Base64Validator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.Base64Validator"/> class.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.Base64Validator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.Base64Validator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+            <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Thrown if a Regex time-out occurred.</exception>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.BetweenValidator">
+            <summary>
+            Defines a data validator for ensuring a value is within a minimum and maximum range.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.BetweenValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.BetweenValidator"/> class.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.BetweenValidator.#ctor(System.IComparable,System.IComparable)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.BetweenValidator"/> class with a minimum and maximum range.
+            </summary>
+            <param name="min">The minimum value within the range.</param>
+            <param name="max">The maximum value within the range.</param>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.BetweenValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.BetweenValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.BetweenValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.BetweenValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.BetweenValidator.Min">
+            <summary>
+            Gets or sets the minimum value within the range.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.BetweenValidator.Max">
+            <summary>
+            Gets or sets the maximum value within the range.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.BetweenValidator.Inclusive">
+            <summary>
+            Gets or sets a value indicating whether the range is inclusive.
+            </summary>
+            <remarks>
+            By default, the value is <c>true</c>.
+            </remarks>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.BetweenValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.EmailValidator">
+            <summary>
+            Defines a data validator for ensuring a value is an email address.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.EmailValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.EmailValidator"/> class.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.EmailValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.GuidValidator">
+            <summary>
+            Defines a data validator for ensuring a value is a <see cref="T:System.Guid"/>.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.GuidValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.GuidValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.GuidValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.GuidValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.GuidValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.IpAddressValidator">
+            <summary>
+            Defines a data validator for ensuring a value is a valid IP address.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.IpAddressValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.IpAddressValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.IpAddressValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.IpAddressValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.IpAddressValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+            <exception cref="T:System.OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue"></see> elements.</exception>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.LatitudeValidator">
+            <summary>
+            Defines a data validator for ensuring a value is within the valid range for a latitude value.
+            </summary>
+        </member>
+        <member name="F:MADE.Data.Validation.Validators.LatitudeValidator.Min">
+            <summary>
+            The minimum valid latitude value.
+            </summary>
+        </member>
+        <member name="F:MADE.Data.Validation.Validators.LatitudeValidator.Max">
+            <summary>
+            The maximum valid latitude value.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.LatitudeValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.LatitudeValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.LatitudeValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.LatitudeValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.LatitudeValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.LongitudeValidator">
+            <summary>
+            Defines a data validator for ensuring a value is within the valid range for a longitude value.
+            </summary>
+        </member>
+        <member name="F:MADE.Data.Validation.Validators.LongitudeValidator.Min">
+            <summary>
+            The minimum valid longitude value.
+            </summary>
+        </member>
+        <member name="F:MADE.Data.Validation.Validators.LongitudeValidator.Max">
+            <summary>
+            The maximum valid longitude value.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.LongitudeValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.LongitudeValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.LongitudeValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.LongitudeValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.LongitudeValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.MacAddressValidator">
+            <summary>
+            Defines a data validator for ensuring a value is a valid MAC address.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MacAddressValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MacAddressValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MacAddressValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MacAddressValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MacAddressValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+            <exception cref="T:System.OverflowException">The array is multidimensional and contains more than <see cref="F:System.Int32.MaxValue"></see> elements.</exception>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.MaxLengthValidator">
+            <summary>
+            Defines a data validator for ensuring a value is less than a maximum length.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MaxLengthValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.MaxLengthValidator"/> class.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MaxLengthValidator.#ctor(System.IComparable)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.MaxLengthValidator"/> class with a maximum value.
+            </summary>
+            <param name="max">The maximum value.</param>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MaxLengthValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MaxLengthValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MaxLengthValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MaxLengthValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MaxLengthValidator.Max">
+            <summary>
+            Gets or sets the maximum value.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MaxLengthValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.MaxValueValidator">
+            <summary>
+            Defines a data validator for ensuring a value is less than a maximum value.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MaxValueValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.MaxValueValidator"/> class.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MaxValueValidator.#ctor(System.IComparable)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.MaxValueValidator"/> class with a maximum value.
+            </summary>
+            <param name="max">The maximum value.</param>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MaxValueValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MaxValueValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MaxValueValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MaxValueValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MaxValueValidator.Max">
+            <summary>
+            Gets or sets the minimum value.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MaxValueValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.MinLengthValidator">
+            <summary>
+            Defines a data validator for ensuring a value is greater than a minimum length.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MinLengthValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.MinLengthValidator"/> class.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MinLengthValidator.#ctor(System.IComparable)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.MinLengthValidator"/> class with a minimum value.
+            </summary>
+            <param name="min">The maximum value.</param>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MinLengthValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MinLengthValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MinLengthValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MinLengthValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MinLengthValidator.Min">
+            <summary>
+            Gets or sets the minimum value.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MinLengthValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.MinValueValidator">
+            <summary>
+            Defines a data validator for ensuring a value is greater than a minimum value.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MinValueValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.MinValueValidator"/> class.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MinValueValidator.#ctor(System.IComparable)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.MinValueValidator"/> class with a minimum value.
+            </summary>
+            <param name="min">The minimum value.</param>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MinValueValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MinValueValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MinValueValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MinValueValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.MinValueValidator.Min">
+            <summary>
+            Gets or sets the minimum value.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.MinValueValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.PredicateValidator`1">
+            <summary>
+            Defines a generic data validator that performs custom validation logic based on the value.
+            </summary>
+            <typeparam name="T">The type of value being validated.</typeparam>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.PredicateValidator`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.PredicateValidator`1"/> class.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.PredicateValidator`1.#ctor(System.Func{`0,System.Boolean})">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.Data.Validation.Validators.PredicateValidator`1"/> class with the custom validation logic.
+            </summary>
+            <param name="predicate">The logic for performing validation on the value.</param>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.PredicateValidator`1.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.PredicateValidator`1.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.PredicateValidator`1.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.PredicateValidator`1.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.PredicateValidator`1.Predicate">
+            <summary>
+            Gets or sets the logic for performing validation on the value.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.PredicateValidator`1.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+            <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Thrown if a Regex time-out occurred.</exception>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.RegexValidator">
+            <summary>
+            Defines a generic regular expression data validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.RegexValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.RegexValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.RegexValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.RegexValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.RegexValidator.Pattern">
+            <summary>
+            Gets or sets the RegEx pattern to match on.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.RegexValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+            <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Thrown if a Regex time-out occurred.</exception>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.RequiredValidator">
+            <summary>
+            Defines a data validator for ensuring a value is provided.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.RequiredValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.RequiredValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.RequiredValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.RequiredValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.RequiredValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+        <member name="T:MADE.Data.Validation.Validators.WellFormedUrlValidator">
+            <summary>
+            Defines a data validator for ensuring a value is a valid well formed URL, e.g. https://www.example.com.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.WellFormedUrlValidator.Key">
+            <summary>
+            Gets or sets the key associated with the validator.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.WellFormedUrlValidator.IsInvalid">
+            <summary>
+            Gets or sets a value indicating whether the data provided is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.WellFormedUrlValidator.IsDirty">
+            <summary>
+            Gets or sets a value indicating whether the data is dirty.
+            </summary>
+        </member>
+        <member name="P:MADE.Data.Validation.Validators.WellFormedUrlValidator.FeedbackMessage">
+            <summary>
+            Gets or sets the feedback message to display when <see cref="P:MADE.Data.Validation.IValidator.IsInvalid"/> is true.
+            </summary>
+        </member>
+        <member name="M:MADE.Data.Validation.Validators.WellFormedUrlValidator.Validate(System.Object)">
+            <summary>
+            Executes data validation on the provided <paramref name="value"/>.
+            </summary>
+            <param name="value">The value to be validated.</param>
+        </member>
+    </members>
+</doc>

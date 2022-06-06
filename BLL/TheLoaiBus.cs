@@ -98,9 +98,9 @@ namespace BLL
             return false;
         }
 
-        public List<LoaiSach> findListByMaTheLoai(long id)
+        public List<LoaiSach> findListByTenTheLoai(string tenTheLoai)
         {
-            var exist = db.LoaiSach.Where(m => m.MaLoaiSach == id).ToList();
+            var exist = db.LoaiSach.Where(m => m.TenLoaiSach.ToLower().Contains(tenTheLoai.ToLower())).ToList();
             return exist;
         }
     }

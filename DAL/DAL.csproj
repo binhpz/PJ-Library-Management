@@ -51,15 +51,6 @@
     <Reference Include="Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.2\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
-    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Siticone.Desktop.UI, Version=2.0.9.0, Culture=neutral, PublicKeyToken=422d444a8a9fa6db, processorArchitecture=MSIL">
@@ -82,21 +73,9 @@
     <Compile Include="AppDBContext.cs" />
     <Compile Include="DocGia.cs" />
     <Compile Include="LoaiSach.cs" />
-    <Compile Include="Migrations\202205181155086_init.cs" />
-    <Compile Include="Migrations\202205181155086_init.designer.cs">
-      <DependentUpon>202205181155086_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205240308554_update-01.cs" />
-    <Compile Include="Migrations\202205240308554_update-01.designer.cs">
-      <DependentUpon>202205240308554_update-01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205250739175_update-tranthai.cs" />
-    <Compile Include="Migrations\202205250739175_update-tranthai.designer.cs">
-      <DependentUpon>202205250739175_update-tranthai.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205280814096_edit doc gia.cs" />
-    <Compile Include="Migrations\202205280814096_edit doc gia.designer.cs">
-      <DependentUpon>202205280814096_edit doc gia.cs</DependentUpon>
+    <Compile Include="Migrations\202206051634371_init.cs" />
+    <Compile Include="Migrations\202206051634371_init.designer.cs">
+      <DependentUpon>202206051634371_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MuonTraSach.cs" />
@@ -109,20 +88,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205181155086_init.resx">
-      <DependentUpon>202205181155086_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205240308554_update-01.resx">
-      <DependentUpon>202205240308554_update-01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205250739175_update-tranthai.resx">
-      <DependentUpon>202205250739175_update-tranthai.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205280814096_edit doc gia.resx">
-      <DependentUpon>202205280814096_edit doc gia.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\knockout.combobox-1.0.80.0.css" />
@@ -131,6 +96,11 @@
     <Content Include="Scripts\knockout-3.0.0.js" />
     <Content Include="Scripts\knockout.combobox-1.0.80.0.js" />
     <Content Include="Scripts\knockout.combobox-1.0.80.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202206051634371_init.resx">
+      <DependentUpon>202206051634371_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

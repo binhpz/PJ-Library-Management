@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MADE.UI</name>
+    </assembly>
+    <members>
+        <member name="T:MADE.UI.Controls.ContentControl">
+            <summary>
+            Defines a UI element for creating custom controls with content in Windows applications.
+            </summary>
+        </member>
+        <member name="M:MADE.UI.Controls.ContentControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.UI.Controls.ContentControl"/> class.
+            </summary>
+        </member>
+        <member name="E:MADE.UI.Controls.ContentControl.ViewLoaded">
+            <summary>
+            Occurs when the view has loaded.
+            </summary>
+        </member>
+        <member name="E:MADE.UI.Controls.ContentControl.IsVisibleChanged">
+            <summary>
+            Occurs when the <see cref="P:MADE.UI.Controls.ContentControl.IsVisible"/> state has changed.
+            </summary>
+        </member>
+        <member name="P:MADE.UI.Controls.ContentControl.IsVisible">
+            <summary>
+            Gets or sets a value indicating whether the view is visible in the UI.
+            </summary>
+            <exception cref="T:System.Exception" accessor="set">A delegate callback throws an exception.</exception>
+        </member>
+        <member name="M:MADE.UI.Controls.ContentControl.GetChildView``1(System.String)">
+            <summary>
+            Retrieves the element from the instantiated view by the given resource identifier.
+            </summary>
+            <param name="resourceName">
+            The name of the resource to find.
+            </param>
+            <typeparam name="TView">
+            The type of view to retrieve.
+            </typeparam>
+            <returns>
+            Returns the view from the layout, if the view is found.
+            </returns>
+        </member>
+        <member name="M:MADE.UI.Controls.ContentControl.#ctor(System.IntPtr)">
+            <summary>
+            Native constructor, do not use explicitly.
+            </summary>
+            <remarks>
+            Used by the Xamarin Runtime to materialize native 
+            objects that may have been collected in the managed world.
+            </remarks>
+        </member>
+        <member name="T:MADE.UI.Controls.Control">
+            <summary>
+            Defines a UI element for creating custom controls in Windows applications.
+            </summary>
+        </member>
+        <member name="M:MADE.UI.Controls.Control.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MADE.UI.Controls.Control"/> class.
+            </summary>
+        </member>
+        <member name="E:MADE.UI.Controls.Control.ViewLoaded">
+            <summary>
+            Occurs when the view has loaded.
+            </summary>
+        </member>
+        <member name="E:MADE.UI.Controls.Control.IsVisibleChanged">
+            <summary>
+            Occurs when the <see cref="P:MADE.UI.Controls.Control.IsVisible"/> state has changed.
+            </summary>
+        </member>
+        <member name="P:MADE.UI.Controls.Control.IsVisible">
+            <summary>
+            Gets or sets a value indicating whether the view is visible in the UI.
+            </summary>
+            <exception cref="T:System.Exception" accessor="set">A delegate callback throws an exception.</exception>
+        </member>
+        <member name="M:MADE.UI.Controls.Control.GetChildView``1(System.String)">
+            <summary>
+            Retrieves the element from the instantiated view by the given resource identifier.
+            </summary>
+            <param name="resourceName">
+            The name of the resource to find.
+            </param>
+            <typeparam name="TView">
+            The type of view to retrieve.
+            </typeparam>
+            <returns>
+            Returns the view from the layout, if the view is found.
+            </returns>
+        </member>
+        <member name="M:MADE.UI.Controls.Control.#ctor(System.IntPtr)">
+            <summary>
+            Native constructor, do not use explicitly.
+            </summary>
+            <remarks>
+            Used by the Xamarin Runtime to materialize native 
+            objects that may have been collected in the managed world.
+            </remarks>
+        </member>
+        <member name="T:MADE.UI.Controls.IControl">
+            <summary>
+            Defines an interface for components of a common application control.
+            </summary>
+        </member>
+        <member name="M:MADE.UI.Controls.IControl.GetChildView``1(System.String)">
+            <summary>
+            Retrieves the element from the instantiated view by the given resource identifier.
+            </summary>
+            <param name="resourceName">
+            The name of the resource to find.
+            </param>
+            <typeparam name="TView">
+            The type of view to retrieve.
+            </typeparam>
+            <returns>
+            Returns the view from the layout, if the view is found.
+            </returns>
+        </member>
+        <member name="T:MADE.UI.Extensions.ListViewBaseExtensions">
+            <summary>
+            Defines an extension to the <see cref="T:Windows.UI.Xaml.Controls.ListViewBase"/> control for binding a command to the item click event.
+            </summary>
+        </member>
+        <member name="F:MADE.UI.Extensions.ListViewBaseExtensions.ItemClickCommandProperty">
+            <summary>
+            Defines the dependency property for the item click command.
+            </summary>
+        </member>
+        <member name="M:MADE.UI.Extensions.ListViewBaseExtensions.SetItemClickCommand(Windows.UI.Xaml.DependencyObject,System.Windows.Input.ICommand)">
+            <summary>
+            Sets the item click command for the specified <see cref="T:Windows.UI.Xaml.DependencyObject"/>.
+            </summary>
+            <param name="obj">
+            The <see cref="T:Windows.UI.Xaml.DependencyObject"/> to set the command to.
+            </param>
+            <param name="command">
+            The <see cref="T:System.Windows.Input.ICommand"/> to set.
+            </param>
+        </member>
+        <member name="M:MADE.UI.Extensions.ListViewBaseExtensions.GetItemClickCommand(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Gets the item click command for the specified <see cref="T:Windows.UI.Xaml.DependencyObject"/>.
+            </summary>
+            <param name="obj">
+            The <see cref="T:Windows.UI.Xaml.DependencyObject"/> to get the command from.
+            </param>
+            <returns>
+            Returns the <see cref="T:System.Windows.Input.ICommand"/>.
+            </returns>
+        </member>
+        <member name="T:MADE.UI.Extensions.ViewExtensions">
+            <summary>
+            Defines a collection of extensions for handling Views in Windows applications.
+            </summary>
+        </member>
+        <member name="M:MADE.UI.Extensions.ViewExtensions.SetVisible(Windows.UI.Xaml.UIElement,System.Boolean)">
+            <summary>
+            Sets the visibility of the given control by the given visible boolean value.
+            </summary>
+            <param name="view">
+            The control to update visibility.
+            </param>
+            <param name="isVisible">
+            A value indicating whether the control is visible.
+            </param>
+        </member>
+        <member name="M:MADE.UI.Extensions.ViewExtensions.SetVisible(Windows.UI.Xaml.UIElement,System.Boolean,System.Boolean)">
+            <summary>
+            Sets the visibility of the given control by the given visible boolean value.
+            If the control can contain child control, these will also be updated if the given parameter is set to true.
+            </summary>
+            <param name="view">
+            The control to update visibility.
+            </param>
+            <param name="isVisible">
+            A value indicating whether the control is visible.
+            </param>
+            <param name="updateChildViews">
+            A value indicating whether to update the control's child visibility states.
+            </param>
+        </member>
+        <member name="T:MADE.UI.IView">
+            <summary>
+            Defines an interface for a common application user interface.
+            </summary>
+        </member>
+        <member name="E:MADE.UI.IView.ViewLoaded">
+            <summary>
+            Occurs when the view has loaded.
+            </summary>
+        </member>
+        <member name="E:MADE.UI.IView.IsVisibleChanged">
+            <summary>
+            Occurs when the <see cref="P:MADE.UI.IView.IsVisible"/> state has changed.
+            </summary>
+        </member>
+        <member name="P:MADE.UI.IView.IsEnabled">
+            <summary>
+            Gets or sets a value indicating whether the view is enabled and can be interacted with.
+            </summary>
+        </member>
+        <member name="P:MADE.UI.IView.IsVisible">
+            <summary>
+            Gets or sets a value indicating whether the view is visible in the UI.
+            </summary>
+        </member>
+        <member name="T:MADE.UI.ViewLoadedEventArgs">
+            <summary>
+            Defines an event argument for a view having loaded.
+            </summary>
+        </member>
+        <member name="T:MADE.UI.ViewLoadedEventHandler">
+            <summary>
+            Defines a delegate for an event handler of view's having loaded.
+            </summary>
+            <param name="sender">
+            The sender.
+            </param>
+            <param name="args">
+            The view loaded event argument.
+            </param>
+        </member>
+        <member name="T:MADE.UI.GlobalStaticResources">
+            <summary>
+            Contains all the static resources defined for the application
+            </summary>
+        </member>
+    </members>
+</doc>

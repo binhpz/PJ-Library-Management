@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
+    [Table("MuonTraSach")]
     public class MuonTraSach
     {
         [Key]

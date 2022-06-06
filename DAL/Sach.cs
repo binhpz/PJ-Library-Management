@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-   public class Sach
+    [Table("Sach")]
+    public class Sach
     {
         [Key]
         [DisplayName("Mã sách")]
@@ -37,7 +38,7 @@ namespace DAL
         public ICollection<MuonTraSach> MuonTraSach { get; set; }
 
         [Browsable(false)]
-        [ForeignKey("MaSach")] public virtual LoaiSach LoaiSach { get; set; }
+        [ForeignKey("MaLoaiSach")] public virtual LoaiSach LoaiSach { get; set; }
 
         [Browsable(false)]
         public long MaLoaiSach { get; set; }
